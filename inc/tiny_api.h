@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+// FIXME 设置相同优先级时 ? 可能发生冲突
 #define TY_GCC_CONSTRUCTOR_LEVEL_CLOCK 101
 #define TY_GCC_CONSTRUCTOR_LEVEL_PERIPHERAL 201
 
