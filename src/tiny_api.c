@@ -16,6 +16,28 @@ void ty_delay_ms(uint32_t ms) {
   }
 }
 
+// FIXME: Unsafe for letter_shell
+signed short ty_io_read(char *data, unsigned short len) {
+  int ch = 0;
+  for (int i = 0; i < len; i++) {
+    ch = ty_io_getchar();
+    if (ch < 0) {
+      return -1;
+    }
+    data[i] = (char)ch;
+  }
+  return len;
+}
+
+// FIXME: Unsafe for letter_shell
+signed short ty_io_write(char *data, unsigned short len) {
+  signed short i = 0;
+  while ((i < len) && (ty_io_putchar(data[i]) == 0)) {
+    i += 1;
+  }
+  return i;
+}
+
 bool ty_io_receive_timeout(uint32_t ms) {
   bool ret = true;
   for (uint32_t _ms = 0; ms > 0; ms -= _ms) {

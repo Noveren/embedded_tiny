@@ -1,4 +1,4 @@
-
+#if defined(FM25V10) || defined(FM25V05) || defined(FM25W256)
 #include <stdio.h>
 
 #include "tiny_api.h"
@@ -141,3 +141,4 @@ int ty_fm25x_gets_close(void) {
   ty_spi_select(false);
   return 0;
 }
+#endif

@@ -10,6 +10,7 @@
 
 #define NEED_IMPL extern
 
+NEED_IMPL uint32_t ty_ticks_get(bool end);
 NEED_IMPL void ty_delay_us(uint32_t us);
 extern void ty_delay_ms(uint32_t ms);
 
@@ -19,6 +20,10 @@ NEED_IMPL int ty_io_enable(bool status);
 NEED_IMPL int ty_io_putchar(char ch);
 NEED_IMPL int ty_io_getchar(void);
 NEED_IMPL bool ty_io_receive_is_empty(void);
+// FIXME: Unsafe for letter_shell
+extern signed short ty_io_read(char *data, unsigned short len);
+// FIXME: Unsafe for letter_shell
+extern signed short ty_io_write(char *data, unsigned short len);
 extern bool ty_io_receive_timeout(uint32_t ms);
 extern int ty_io_receive_flush(void);
 
