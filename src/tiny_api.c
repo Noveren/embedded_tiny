@@ -1,6 +1,4 @@
 
-#include <malloc.h>
-#include <stdio.h>
 
 #include "tiny_api.h"
 
@@ -57,6 +55,9 @@ int ty_io_receive_flush(void) {
   }
   return 0;
 }
+
+#include <malloc.h>
+#include <stdio.h>
 
 void ty_print_malloc_info(void) {
   struct mallinfo mi = mallinfo();

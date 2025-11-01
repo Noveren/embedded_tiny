@@ -2,6 +2,7 @@
 #define __TINY_API_H_
 
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdint.h>
 
 // FIXME 设置相同优先级时 ? 可能发生冲突
@@ -34,7 +35,7 @@ NEED_IMPL void ty_spi_write(uint8_t byte);
 
 NEED_IMPL const uint8_t ty_adc_CHANNEL_LENGTH;
 NEED_IMPL int ty_adc_enable(bool status);
-NEED_IMPL const uint16_t *ty_adc_get(void);
+NEED_IMPL int ty_adc_get(uint16_t *buf);
 
 extern void ty_print_malloc_info(void);
 
